@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 steps:
   # build
   - name: 'gcr.io/cloud-builders/docker'
@@ -9,15 +8,3 @@ steps:
   # deploy
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['beta','run','deploy','testservice','--image','gcr.io/long-ceiling-412222/image1','--region','us-west2','--platform','managed','--allow-unauthenticated']
-=======
-steps:
-  # build
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build','-t','gcr.io/long-ceiling-412222/image1','.']
-  # push
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push','gcr.io/long-ceiling-412222/image1']
-  # deploy
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta','run','deploy','testservice','--image','gcr.io/long-ceiling-412222/image1','--region','us-west2','--platform','managed','--allow-unauthenticated']
->>>>>>> e9387966acdb722e89b731f408a91ce56c6026af

@@ -1,0 +1,10 @@
+steps:
+  # build
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build','-t','gcr.io/long-ceiling-412222/image1','.']
+  # push
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push','gcr.io/long-ceiling-412222/image1']
+  # deploy
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta','run','deploy','testservice','--image','gcr.io/long-ceiling-412222/image1','--region','us-west2','--platform','managed','--allow-unauthenticated']
